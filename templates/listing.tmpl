@@ -1,0 +1,27 @@
+## -*- coding: utf-8 -*-
+<%inherit file="base.tmpl"/>
+<%block name="content">
+<nav class="breadcrumbs">
+% for link, crumb in crumbs:
+    % if rel_link(permalink, link) == "#":
+        <a class="current" href="${link}">${crumb}</a>
+    %else:
+        <a href="${link}">${crumb}</a>
+    %endif
+% endfor
+</nav>
+
+<ul class="side-nav">
+  % for name in folders:
+    <li><a href="${name}"><i class="icon-folder"></i> ${name}</a></li>
+  % endfor
+  <li class="divider"></li>
+  % for name in files:
+    <li><a href="${name}.html"><i class="icon-file"></i> ${name}</a></li>
+  % endfor
+</ul>
+
+% if code:
+    ${code}
+% endif
+</%block>

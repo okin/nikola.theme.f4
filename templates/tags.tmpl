@@ -1,0 +1,11 @@
+## -*- coding: utf-8 -*-
+<%inherit file="base.tmpl"/>
+<%block name="content">
+    <div class="large-12 columns" role="content">
+      <h2>${title}</h2>
+      <hr>
+      % for text, link in items:
+          <a class="button small radius" href="${link}">${text}</a>
+      % endfor
+    </div>
+</%block>

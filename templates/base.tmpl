@@ -1,0 +1,88 @@
+## -*- coding: utf-8 -*-
+<%namespace name="base_helper" file="base_helper.tmpl"/>
+<%namespace name="f4_base_helper" file="f4_base_helper.tmpl"/>
+${set_locale(lang)}
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="${lang}" ><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="${lang}" ><!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="assets/css/normalize.css" />
+  <script src="assets/js/vendor/custom.modernizr.js"></script>
+  ${base_helper.html_head()}
+  <%block name="extra_head">
+  </%block>
+  ${extra_head_data}
+</head>
+<body>
+<!-- Nav Bar -->
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="nav-bar right">
+       <ul class="button-group">
+         ${f4_base_helper.html_sidebar_links()}
+        </ul>
+      </div>
+      <a href="${abs_link('/')}"><h1>${blog_title}</h1></a>
+      <hr />
+    </div>
+  </div>
+  <!-- End Nav -->
+
+  <!-- Main Page Content -->
+  <div class="row">
+    <%block name="content"></%block>
+  </div>
+  <!-- End Main Content -->
+
+  <!-- Footer -->
+  <footer class="row">
+    <hr />
+    <div class="large-12 columns">
+      <p>${content_footer}</p>
+    </div>
+  </footer>
+
+  <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'assets/js/vendor/zepto' : 'assets/js/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+  <script src="assets/js/foundation.min.js"></script>
+  <!--
+
+  <script src="js/foundation/foundation.js"></script>
+
+  <script src="js/foundation/foundation.alerts.js"></script>
+
+  <script src="js/foundation/foundation.clearing.js"></script>
+
+  <script src="js/foundation/foundation.cookie.js"></script>
+
+  <script src="js/foundation/foundation.dropdown.js"></script>
+
+  <script src="js/foundation/foundation.forms.js"></script>
+
+  <script src="js/foundation/foundation.joyride.js"></script>
+
+  <script src="js/foundation/foundation.magellan.js"></script>
+
+  <script src="js/foundation/foundation.orbit.js"></script>
+
+  <script src="js/foundation/foundation.placeholder.js"></script>
+
+  <script src="js/foundation/foundation.reveal.js"></script>
+
+  <script src="js/foundation/foundation.section.js"></script>
+
+  <script src="js/foundation/foundation.tooltips.js"></script>
+
+  <script src="js/foundation/foundation.topbar.js"></script>
+
+  -->
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>

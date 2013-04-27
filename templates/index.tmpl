@@ -1,0 +1,26 @@
+## -*- coding: utf-8 -*-
+<%namespace name="helper" file="index_helper.tmpl"/>
+<%namespace name="disqus" file="disqus_helper.tmpl"/>
+<%inherit file="base.tmpl"/>
+<%block name="content">
+<!-- Main Blog Content -->
+<div class="large-12 columns" role="content">
+
+  % for post in posts:
+  <article>
+    <h2><a href="${post.permalink()}">${post.title()}</a></h2>
+    <h6 class="subheader">${messages("Posted")}: <time class="published" datetime="${post.date.isoformat()}">${post.formatted_date(date_format)}</time></h6>
+
+    <p>${post.text(teaser_only=index_teasers)}</p>
+  </article>
+
+  % if not post.meta('nocomments'):
+      ${disqus.html_disqus_link(post.permalink()+"#disqus_thread", post.base_path)}
+  % endif
+  <hr />
+  % endfor
+</div>
+    ${helper.html_pager()}
+    ${disqus.html_disqus_script()}
+    ${helper.mathjax_script(post)}
+</%block>
