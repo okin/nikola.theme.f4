@@ -1,0 +1,17 @@
+## -*- coding: utf-8 -*-
+<%def name="html_pager()">
+<div class="row">
+  <div class="small-12 columns">
+    <div class="small-2 columns">
+      %if prevlink:
+        <a class="small button radius" href="${prevlink}">&larr; ${messages("Newer posts")}</a>
+      %endif
+    </div>
+    <div class="small-2 columns">
+      %if nextlink:
+        <a class="small button radius" href="${nextlink}">${messages("Older posts")} &rarr;</a>
+      %endif
+    </div>
+  </div>
+</div>
+</%def>

@@ -1,5 +1,6 @@
 ## -*- coding: utf-8 -*-
 <%namespace name="helper" file="index_helper.tmpl"/>
+<%namespace name="f4_helper" file="f4_index_helper.tmpl"/>
 <%namespace name="disqus" file="disqus_helper.tmpl"/>
 <%inherit file="base.tmpl"/>
 <%block name="content">
@@ -20,7 +21,7 @@
   <hr />
   % endfor
 </div>
-    ${helper.html_pager()}
+    ${f4_helper.html_pager()}
     ${disqus.html_disqus_script()}
     ${helper.mathjax_script(post)}
 </%block>
