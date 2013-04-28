@@ -2,10 +2,12 @@
 
 <%def name="html_sidebar_links()">
     %for url, text in sidebar_links[lang]:
+        <li class="divider"></li>
         % if rel_link(permalink, url) == "#":
-            <li><a href="${url}" class="button success">${text}</a></li>
+
+            <li class="active"><a href="${url}">${text}</a></li>
         %else:
-            <li><a href="${url}" class="button">${text}</a></li>
+            <li><a href="${url}">${text}</a></li>
         %endif
     %endfor
 </%def>
